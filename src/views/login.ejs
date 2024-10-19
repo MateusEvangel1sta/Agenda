@@ -10,6 +10,8 @@
       <p class="text-center lead">
         Faça login ou crie a sua conta
       </p>
+
+      <%- include('includes/messages'); %>
       
       <div class="row">
         <div class="col-lg">
@@ -40,7 +42,7 @@
             Se você já tem uma conta, faça login abaixo:
           </p>
 
-          <form action="/login/login" method="GET">
+          <form action="/login/login" method="POST">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="form-group">
               <label for="exampleInputEmail1">Seu e-mail</label>
