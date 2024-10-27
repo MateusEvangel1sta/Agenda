@@ -33,7 +33,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "public")));
 
 const sessionOptions = session({
-  secret: "akasdfj0út23453456+54qt23qv  qwf qwer qwer qewr asdasdasda a6()",
+  secret: "_secret_key",
   store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
   resave: false,
   saveUninitialized: false,
@@ -46,7 +46,6 @@ app.use(sessionOptions);
 app.use(flash());
 
 app.set("views", path.resolve(__dirname, "src", "views"));
-app.set("view engine", "ejs");
 
 app.use(csrf());
 // Nossos próprios middlewares
