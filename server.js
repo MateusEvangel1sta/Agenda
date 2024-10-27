@@ -46,6 +46,7 @@ app.use(sessionOptions);
 app.use(flash());
 
 app.set("views", path.resolve(__dirname, "src", "views"));
+app.set("view engine", "ejs");
 
 app.use(csrf());
 // Nossos próprios middlewares
