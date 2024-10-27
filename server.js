@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 mongoose
   .connect(process.env.CONNECTIONSTRING)
   .then(() => {
-    app.emit("Pronto");
+    app.emit("pronto");
   })
   .catch((e) => {
     console.log(e);
