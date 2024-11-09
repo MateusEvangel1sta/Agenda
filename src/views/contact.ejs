@@ -12,7 +12,11 @@
 
       <%- include('includes/messages') %>
 
-      <form action="/contact/register" method="POST">
+      <% if (contact._id) { %>
+        <form action="/contact/edit/<%= contact._id %>" method="POST">
+      <% } else { %>
+        <form action="/contact/register" method="POST">
+      <% } %>
         <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
         
         <div class="mb-3">
@@ -22,21 +26,22 @@
 
         <div class="mb-3">
           <label for="registerSurnameContact" class="form-label">Sobrenome: </label>
-          <input type="text" class="form-control" id="registerSurnameContact" name="surname">
+          <input value="<%= contact.surname %>" type="text" class="form-control" id="registerSurnameContact" name="surname">
         </div>
 
         <div class="mb-3">
           <label for="registerEmailContact" class="form-label">Email: </label>
-          <input type="email" class="form-control" id="registerEmailContact" name="email">
+          <input value="<%= contact.email %>" type="email" class="form-control" id="registerEmailContact" name="email">
         </div>
 
         <div class="mb-3">
           <label for="registerTelContact" class="form-label">Telefone: </label>
-          <input type="tel" class="form-control" id="registerTelContact" name="tel">
+          <input value="<%= contact.tel %>" type="tel" class="form-control" id="registerTelContact" name="tel">
         </div>
 
         <button type="submit" class="btn btn-primary">Salvar</button>
       </form>
+
 
     <div class="col-2"></div>
   </div>
