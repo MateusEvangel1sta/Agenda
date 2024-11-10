@@ -1,6 +1,12 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-import "./assets/css/style.css";
+import Login from "./modules/login";
 
-console.log("Eu Sou!");
+const login = new Login('.formLogin');
+const register = new Login('.formRegister');
+
+login.init();
+register.init();
+
+// import "./assets/css/style.css";
